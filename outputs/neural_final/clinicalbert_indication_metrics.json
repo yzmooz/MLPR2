@@ -1,0 +1,55 @@
+{
+  "model_name": "emilyalsentzer/Bio_ClinicalBERT",
+  "device": "cuda",
+  "trainable_encoder_layer": 11,
+  "best_epoch": 6,
+  "best_validation_objective": 0.692758371171605,
+  "history": [
+    {
+      "roc_auc": 0.6032320101036195,
+      "pr_auc": 0.6982022272070769,
+      "objective": 0.6507171186553482,
+      "epoch": 1,
+      "train_loss": 0.6715500426149654
+    },
+    {
+      "roc_auc": 0.6234536008496226,
+      "pr_auc": 0.7096091718283111,
+      "objective": 0.6665313863389668,
+      "epoch": 2,
+      "train_loss": 0.6644309951873597
+    },
+    {
+      "roc_auc": 0.622147593214501,
+      "pr_auc": 0.7202359649548441,
+      "objective": 0.6711917790846725,
+      "epoch": 3,
+      "train_loss": 0.6542905704703873
+    },
+    {
+      "roc_auc": 0.6235540629754012,
+      "pr_auc": 0.725667217859182,
+      "objective": 0.6746106404172916,
+      "epoch": 4,
+      "train_loss": 0.6494072782779168
+    },
+    {
+      "roc_auc": 0.6416946525445621,
+      "pr_auc": 0.7309611667021967,
+      "objective": 0.6863279096233794,
+      "epoch": 5,
+      "train_loss": 0.6444053421477358
+    },
+    {
+      "roc_auc": 0.6455122133241482,
+      "pr_auc": 0.7400045290190618,
+      "objective": 0.692758371171605,
+      "epoch": 6,
+      "train_loss": 0.644459912876883
+    }
+  ],
+  "artifacts": {
+    "encoder_delta": "outputs\\neural_final\\clinicalbert_indication_delta.pt",
+    "features": "outputs\\neural_final\\clinicalbert_indication_features.npz"
+  }
+}

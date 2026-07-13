@@ -1,0 +1,19 @@
+{
+  "binary_label": "is_abnormal",
+  "label_columns": [
+    "label_Opacity",
+    "label_Cardiomegaly",
+    "label_Pulmonary_Atelectasis",
+    "label_Calcinosis",
+    "label_Calcified_Granuloma"
+  ],
+  "pathology_labels": [
+    "Opacity",
+    "Cardiomegaly",
+    "Pulmonary Atelectasis",
+    "Calcinosis",
+    "Calcified Granuloma"
+  ],
+  "image_size": 24,
+  "text_max_features": 5000
+}

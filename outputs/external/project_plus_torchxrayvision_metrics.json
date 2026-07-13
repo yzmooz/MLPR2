@@ -1,0 +1,41 @@
+{
+  "metadata_csv": "data\\processed\\iu_xray_metadata.csv",
+  "artifacts_dir": "outputs\\final",
+  "weights": "densenet121-res224-all",
+  "selection": {
+    "split": "val",
+    "criterion": "max PR-AUC",
+    "external_weight": 0.38,
+    "project_weight": 0.62,
+    "val_metrics": {
+      "roc_auc": 0.8779815723757857,
+      "pr_auc": 0.9251714564193376,
+      "f1": 0.8185840707964602,
+      "precision": 0.8604651162790697,
+      "recall": 0.7805907172995781
+    }
+  },
+  "test": {
+    "project_gated": {
+      "roc_auc": 0.6863989185417756,
+      "pr_auc": 0.782079926501095,
+      "f1": 0.7056277056277056,
+      "precision": 0.7149122807017544,
+      "recall": 0.6965811965811965
+    },
+    "torchxrayvision": {
+      "roc_auc": 0.7423396709110994,
+      "pr_auc": 0.8233618395641893,
+      "f1": 0.7683049147442327,
+      "precision": 0.724007561436673,
+      "recall": 0.8183760683760684
+    },
+    "project_plus_torchxrayvision": {
+      "roc_auc": 0.7309073201930344,
+      "pr_auc": 0.8128868344066479,
+      "f1": 0.7192008879023307,
+      "precision": 0.7482678983833718,
+      "recall": 0.6923076923076923
+    }
+  }
+}

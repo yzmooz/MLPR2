@@ -1,0 +1,52 @@
+{
+  "metadata_csv": "data\\processed\\iu_xray_metadata.csv",
+  "weights": "densenet121-res224-all",
+  "rows": {
+    "test": 762
+  },
+  "external_pathologies": [
+    "Atelectasis",
+    "Consolidation",
+    "Infiltration",
+    "Pneumothorax",
+    "Edema",
+    "Emphysema",
+    "Fibrosis",
+    "Effusion",
+    "Pneumonia",
+    "Pleural_Thickening",
+    "Cardiomegaly",
+    "Nodule",
+    "Mass",
+    "Hernia",
+    "Lung Lesion",
+    "Fracture",
+    "Lung Opacity",
+    "Enlarged Cardiomediastinum"
+  ],
+  "binary_abnormal_heuristic": "max probability over all TorchXRayVision pathologies",
+  "binary": {
+    "metrics": {
+      "roc_auc": 0.7423396709110994,
+      "pr_auc": 0.8233618395641893,
+      "f1": 0.7683049147442327,
+      "precision": 0.724007561436673,
+      "recall": 0.8183760683760684
+    }
+  },
+  "mapped_multilabel": {
+    "label_mapping": {
+      "Opacity": "Lung Opacity",
+      "Cardiomegaly": "Cardiomegaly",
+      "Pulmonary Atelectasis": "Atelectasis"
+    },
+    "metrics": {
+      "micro_roc_auc": 0.8477039683127268,
+      "macro_roc_auc": 0.840888343359382,
+      "micro_pr_auc": 0.3685839731298121,
+      "macro_pr_auc": 0.37547790181025326,
+      "micro_f1": 0.40588235294117647,
+      "macro_f1": 0.41026252140599895
+    }
+  }
+}

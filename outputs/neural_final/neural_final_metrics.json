@@ -1,0 +1,134 @@
+{
+  "metadata_csv": "data\\processed\\iu_xray_metadata.csv",
+  "rows": {
+    "train": 2672,
+    "validation": 384,
+    "test": 762
+  },
+  "encoders": {
+    "text": "emilyalsentzer/Bio_ClinicalBERT",
+    "image": "TorchXRayVision:densenet121-res224-all",
+    "image_feature_kind": "embedding"
+  },
+  "binary": {
+    "metrics": {
+      "text_neural": {
+        "roc_auc": 0.6023860398860399,
+        "pr_auc": 0.6949535230783299,
+        "f1": 0.6084848484848485,
+        "precision": 0.7030812324929971,
+        "recall": 0.5363247863247863
+      },
+      "image_neural": {
+        "roc_auc": 0.7998575498575498,
+        "pr_auc": 0.8637472146574185,
+        "f1": 0.800369685767098,
+        "precision": 0.7052117263843648,
+        "recall": 0.9252136752136753
+      },
+      "neural_cascade": {
+        "roc_auc": 0.8016599802314088,
+        "pr_auc": 0.8657153294822849,
+        "f1": 0.8098859315589354,
+        "precision": 0.7294520547945206,
+        "recall": 0.9102564102564102
+      }
+    },
+    "improvement": {
+      "cascade_minus_learned_image": {
+        "roc_auc": 0.0018024303738590763,
+        "pr_auc": 0.0019681148248663627,
+        "f1": 0.009516245791837408
+      },
+      "cascade_minus_external_torchxrayvision": {
+        "roc_auc": 0.059320309320309406,
+        "pr_auc": 0.04235348991809562,
+        "f1": 0.04158101681470272
+      }
+    },
+    "selection": {
+      "selected_on": "validation",
+      "regularization_image_c": 0.0003,
+      "regularization_text_c": 0.001,
+      "image_log_odds_weight": 1.0,
+      "text_log_odds_weight": 0.5,
+      "decision_threshold": 0.265,
+      "image_decision_threshold": 0.25,
+      "validation_metrics": {
+        "image_roc_auc": 0.7920433996383363,
+        "image_pr_auc": 0.8729803581976008,
+        "text_roc_auc": 0.6432876948247654,
+        "text_pr_auc": 0.7388701680601455,
+        "cascade_roc_auc": 0.8057636556732397,
+        "cascade_pr_auc": 0.8821370562792503,
+        "cascade_f1": 0.8014705882352942
+      }
+    },
+    "mean_modality_weights": {
+      "text": 0.33333333333333337,
+      "image": 0.6666666666666667
+    }
+  },
+  "multilabel": {
+    "label_columns": [
+      "label_Opacity",
+      "label_Cardiomegaly",
+      "label_Pulmonary_Atelectasis",
+      "label_Calcinosis",
+      "label_Calcified_Granuloma"
+    ],
+    "metrics": {
+      "neural_early_fusion": {
+        "micro_roc_auc": 0.6894339064470004,
+        "macro_roc_auc": 0.6783466183567829,
+        "micro_pr_auc": 0.22282396662178705,
+        "macro_pr_auc": 0.2414454586654274,
+        "micro_f1": 0.28255528255528256,
+        "macro_f1": 0.2691192773436345
+      }
+    }
+  },
+  "classical_reference": {
+    "text_only": {
+      "roc_auc": 0.6117615849758706,
+      "pr_auc": 0.7008355589598204,
+      "f1": 0.6297169811320755,
+      "precision": 0.7026315789473684,
+      "recall": 0.5705128205128205
+    },
+    "image_only": {
+      "roc_auc": 0.6823361823361824,
+      "pr_auc": 0.7683525791683674,
+      "f1": 0.6765714285714286,
+      "precision": 0.7272727272727273,
+      "recall": 0.6324786324786325
+    },
+    "early_fusion": {
+      "roc_auc": 0.6877943485086342,
+      "pr_auc": 0.7775419237589182,
+      "f1": 0.6799557032115172,
+      "precision": 0.7057471264367816,
+      "recall": 0.655982905982906
+    },
+    "gated_fusion": {
+      "roc_auc": 0.6863989185417756,
+      "pr_auc": 0.782079926501095,
+      "f1": 0.7056277056277056,
+      "precision": 0.7149122807017544,
+      "recall": 0.6965811965811965
+    }
+  },
+  "external_torchxrayvision_reference": {
+    "roc_auc": 0.7423396709110994,
+    "pr_auc": 0.8233618395641893,
+    "f1": 0.7683049147442327,
+    "precision": 0.724007561436673,
+    "recall": 0.8183760683760684
+  },
+  "artifacts": {
+    "binary_model": "outputs\\neural_final\\binary_neural_fusion.joblib",
+    "multilabel_model": "outputs\\neural_final\\multilabel_neural_fusion.joblib",
+    "labels": "outputs\\neural_final\\labels.json",
+    "metrics": "outputs\\neural_final\\neural_final_metrics.json"
+  }
+}

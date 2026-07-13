@@ -1,0 +1,42 @@
+{
+  "binary_label": "is_abnormal",
+  "label_columns": [
+    "label_Opacity",
+    "label_Cardiomegaly",
+    "label_Pulmonary_Atelectasis",
+    "label_Calcinosis",
+    "label_Calcified_Granuloma"
+  ],
+  "pathology_labels": [
+    "Opacity",
+    "Cardiomegaly",
+    "Pulmonary Atelectasis",
+    "Calcinosis",
+    "Calcified Granuloma"
+  ],
+  "text_encoder": "emilyalsentzer/Bio_ClinicalBERT",
+  "image_encoder": "TorchXRayVision:densenet121-res224-all",
+  "image_feature_kind": "embedding",
+  "image_outputs": [
+    "Atelectasis",
+    "Consolidation",
+    "Infiltration",
+    "Pneumothorax",
+    "Edema",
+    "Emphysema",
+    "Fibrosis",
+    "Effusion",
+    "Pneumonia",
+    "Pleural_Thickening",
+    "Cardiomegaly",
+    "Nodule",
+    "Mass",
+    "Hernia",
+    "Lung Lesion",
+    "Fracture",
+    "Lung Opacity",
+    "Enlarged Cardiomediastinum"
+  ],
+  "binary_architecture": "image_first_log_odds_cascade",
+  "decision_threshold": 0.265
+}

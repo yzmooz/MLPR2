@@ -1,0 +1,28 @@
+seed: 42
+
+data:
+  metadata_csv: data/processed/iu_xray_metadata.csv
+  task: binary
+  image_size: 384
+  max_text_length: 128
+  text_column: indication
+  label_column: is_abnormal
+  batch_size: 8
+  num_workers: 0
+
+model:
+  image_encoder: tf_efficientnet_b0
+  text_encoder: emilyalsentzer/Bio_ClinicalBERT
+  fusion: gated
+  hidden_dim: 512
+  num_labels: 1
+  dropout: 0.2
+  pretrained: true
+  freeze_backbones: false
+
+training:
+  epochs: 5
+  learning_rate: 0.00003
+  weight_decay: 0.01
+  threshold: 0.5
+  output_dir: outputs/binary_gated_fusion

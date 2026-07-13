@@ -1,0 +1,26 @@
+{
+  "metadata_csv": "data\\processed\\iu_xray_metadata.csv",
+  "task": "multilabel",
+  "label_columns": [
+    "label_Opacity",
+    "label_Cardiomegaly",
+    "label_Pulmonary_Atelectasis",
+    "label_Calcinosis",
+    "label_Calcified_Granuloma"
+  ],
+  "rows": {
+    "train": 840,
+    "val": 120,
+    "test": 239
+  },
+  "metrics": {
+    "text": {
+      "micro_roc_auc": 0.5254409829652549,
+      "macro_roc_auc": 0.5067326597909062,
+      "micro_pr_auc": 0.09542532133194712,
+      "macro_pr_auc": 0.10512108655704791,
+      "micro_f1": 0.12849162011173185,
+      "macro_f1": 0.12740178548367045
+    }
+  }
+}

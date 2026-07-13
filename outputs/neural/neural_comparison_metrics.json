@@ -1,0 +1,98 @@
+{
+  "metadata_csv": "data\\processed\\iu_xray_metadata.csv",
+  "rows": {
+    "train_val": 3056,
+    "test": 762
+  },
+  "encoders": {
+    "text": "emilyalsentzer/Bio_ClinicalBERT",
+    "image": "TorchXRayVision:densenet121-res224-all",
+    "image_feature_kind": "embedding",
+    "image_outputs": [
+      "Atelectasis",
+      "Consolidation",
+      "Infiltration",
+      "Pneumothorax",
+      "Edema",
+      "Emphysema",
+      "Fibrosis",
+      "Effusion",
+      "Pneumonia",
+      "Pleural_Thickening",
+      "Cardiomegaly",
+      "Nodule",
+      "Mass",
+      "Hernia",
+      "Lung Lesion",
+      "Fracture",
+      "Lung Opacity",
+      "Enlarged Cardiomediastinum"
+    ]
+  },
+  "neural": {
+    "metrics": {
+      "text_neural": {
+        "roc_auc": 0.5652908599337171,
+        "pr_auc": 0.6849073815417934,
+        "f1": 0.5781057810578106,
+        "precision": 0.6811594202898551,
+        "recall": 0.5021367521367521
+      },
+      "image_neural": {
+        "roc_auc": 0.7412058840630269,
+        "pr_auc": 0.8266514477633095,
+        "f1": 0.7318681318681318,
+        "precision": 0.753393665158371,
+        "recall": 0.7115384615384616
+      },
+      "early_fusion": {
+        "roc_auc": 0.7266556195127623,
+        "pr_auc": 0.813472318049546,
+        "f1": 0.7274701411509229,
+        "precision": 0.739514348785872,
+        "recall": 0.7158119658119658
+      },
+      "gated_fusion": {
+        "roc_auc": 0.6975332868190011,
+        "pr_auc": 0.7896139734205254,
+        "f1": 0.7216931216931217,
+        "precision": 0.7148846960167715,
+        "recall": 0.7286324786324786
+      }
+    },
+    "mean_modality_weights": {
+      "text": 0.4934090759396637,
+      "image": 0.5065909240603363
+    }
+  },
+  "classical_reference": {
+    "text_only": {
+      "roc_auc": 0.6117615849758706,
+      "pr_auc": 0.7008355589598204,
+      "f1": 0.6297169811320755,
+      "precision": 0.7026315789473684,
+      "recall": 0.5705128205128205
+    },
+    "image_only": {
+      "roc_auc": 0.6823361823361824,
+      "pr_auc": 0.7683525791683674,
+      "f1": 0.6765714285714286,
+      "precision": 0.7272727272727273,
+      "recall": 0.6324786324786325
+    },
+    "early_fusion": {
+      "roc_auc": 0.6877943485086342,
+      "pr_auc": 0.7775419237589182,
+      "f1": 0.6799557032115172,
+      "precision": 0.7057471264367816,
+      "recall": 0.655982905982906
+    },
+    "gated_fusion": {
+      "roc_auc": 0.6863989185417756,
+      "pr_auc": 0.782079926501095,
+      "f1": 0.7056277056277056,
+      "precision": 0.7149122807017544,
+      "recall": 0.6965811965811965
+    }
+  }
+}
